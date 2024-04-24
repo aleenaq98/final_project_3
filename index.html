@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- favicon -->
+      <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+      <!-- navbar icon -->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/html5reset.css">
+      <link rel="stylesheet" href="css/styles.css">
+
+      <title>Aleena's Photography Portfolio</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <a class = "skip" href="#skip">Skip to Main Content</a>
+         <nav class="nav container">
+            <a href="index.html" class="nav__logo">Aleena's Photography</a>
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li class="nav__item">
+                     <a href="index.html" class="nav__link active-link">Home</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="food.html" class="nav__link">Food</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="sports.html" class="nav__link">Sports</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="nature.html" class="nav__link">Nature</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="jewelry.html" class="nav__link">Jewelry</a>
+                  </li>
+               </ul>
+
+               <!-- close button for nav bar -->
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <!-- hamburger menu icon -->
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line"></i>
+            </div>
+         </nav>
+      </header>
+
+      <main class="main">
+         <!-- home section -->
+         <section class="home section" id="home">
+            <img src="images/orange_flowers.jpg" alt="A close up of orange flowers." class="home__bg">
+            <div class="home__shadow"></div>
+
+            <div class="home__container container grid">
+               <div class="home__data">
+                  <div class="home__subtitle" id="typewriter">
+                     Hi, I'm Aleena.
+                  </div>
+
+                  <h1 class="home__title">
+                     Explore <br> My Work
+                  </h1>
+
+                  <p class="home__description">
+                     Hello, I'm Aleena Qaiser and I have 9+ years of experience and I use a Canon EOS 800D DSLR.
+                  </p>
+
+                  <!-- <a href="#" class="button">
+                     Start Your Journey <i class="ri-arrow-right-line"></i>
+                  </a> -->
+               </div>
+
+               <div class="home__cards grid" id="skip">
+                  <a href="food.html">
+                     <article class="home__card">
+                        <img src="images/wings.jpg" alt="Top view of two chicken wings next to hot sauce and red chillies." class="home__card-img">
+                        <h2 class="home__card-title">Food Gallery</h2>
+                        <div class="home__card-shadow"></div>
+                     </article>
+                  </a>
+
+                  <a href="#sports">
+                     <article class="home__card">
+                        <img src="images/football_referees.jpg" alt="Football referees gathered in a huddle." class="home__card-img">
+                        <h2 class="home__card-title">Sports Gallery</h2>
+                        <div class="home__card-shadow"></div>
+                     </article>
+                  </a>
+
+                  <a href="#nature">
+                     <article class="home__card">
+                        <img src="images/Rawal_Lake_sunset.jpg" alt="A silhouette of two people on a canoe with the sun setting behind the mountains." class="home__card-img">
+                        <h2 class="home__card-title">Nature Gallery</h2>
+                        <div class="home__card-shadow"></div>
+                     </article>
+                  </a>
+                  
+                  <a href="#jewelry">
+                     <article class="home__card">
+                        <img src="images/gold_chain_necklace.jpg" alt="A gold chain necklace with a coin pendant against a black silk background." class="home__card-img">
+                        <h2 class="home__card-title">Jewelry Gallery</h2>
+                        <div class="home__card-shadow"></div>
+                     </article>
+                  </a>
+
+                  <!-- <article class="home__card">
+                     <img src="assets/img/jewelry/IMG_2699-14.jpg" alt="home image" class="home__card-img">
+                     <h3 class="home__card-title">Jewelery</h3>
+                     <div class="home__card-shadow"></div>
+                  </article> -->
+               </div>
+            </div>
+         </section>
+
+        <!-- food section -->
+         <section class="food section" id="food">
+            <div class="food__carousel">
+               <div class="food__container container grid _hidden">
+                  <div class="food__data">
+                     <h2 class="section__title">
+                        Mouth-watering <br>
+                        Food Shots
+                     </h2>
+
+                     <p class="food__description">
+                        Spicy Habanero Wings
+                     </p>
+
+                     <div class="food__nav__btns">
+                        <div class="prev button">
+                           <i class="ri-arrow-left-line"></i> Previous
+                        </div>
+
+                        <div class="next button">
+                           Next <i class="ri-arrow-right-line"></i>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="food__image">
+                     <img src="images/wings.jpg" alt="Top view of two chicken wings next to hot sauce and red chillies." class="food__img">
+                     <div class="food__shadow"></div>
+                  </div>
+               </div>
+
+               <div class="food__container container grid _hidden">
+                  <div class="food__data">
+                     <h2 class="section__title">
+                        Mouth-watering <br>
+                        Food Shots
+                     </h2>
+
+                     <p class="food__description">
+                        Strawberry Milkshake with a hint of mint.
+                     </p>
+
+                     <div class="food__nav__btns">
+                        <div class="prev button">
+                           <i class="ri-arrow-left-line"></i> Previous
+                        </div>
+
+                        <div class="next button">
+                           Next <i class="ri-arrow-right-line"></i>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="food__image">
+                     <img src="images/milkshake.jpg" alt="Two glasses of strawberry milkshake with mint leaves on the side." class="food__img">
+                     <div class="food__shadow"></div>
+                  </div>
+               </div>
+
+               <div class="food__container container grid _hidden">
+                  <div class="food__data">
+                     <h2 class="section__title">
+                        Mouth-watering <br>
+                        Food Shots
+                     </h2>
+
+                     <p class="food__description">
+                        Juicy Kiwi.
+                     </p>
+
+                     <div class="food__nav__btns">
+                        <div class="prev button">
+                           <i class="ri-arrow-left-line"></i> Previous
+                        </div>
+
+                        <div class="next button">
+                           Next <i class="ri-arrow-right-line"></i>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="food__image">
+                     <img src="images/kiwi.jpg" alt="A close up of a juicy kiwi cut in half." class="food__img">
+                     <div class="food__shadow"></div>
+                  </div>
+               </div>
+
+               <div class="food__container container grid _hidden">
+                  <div class="food__data">
+                     <h2 class="section__title">
+                        Mouth-watering <br>
+                        Food Shots
+                     </h2>
+
+                     <p class="food__description">
+                        Ramadan-inspired setup of dates.
+                     </p>
+
+                     <div class="food__nav__btns">
+                        <div class="prev button">
+                           <i class="ri-arrow-left-line"></i> Previous
+                        </div>
+
+                        <div class="next button">
+                           Next <i class="ri-arrow-right-line"></i>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="food__image">
+                     <img src="images/dates.jpg" alt="A plate of dates in a ramadan-inspired setting." class="food__img">
+                     <div class="food__shadow"></div>
+                  </div>
+               </div>
+               <!-- <button class="next">&gt;</button> -->
+            </div>
+            <div class="carousel-nav">
+               <div class="dots"></div>
+             </div>
+         </section>
+
+         <!-- sports section -->
+         <section class="sports section" id="sports">
+            <h2 class="section__title">
+               Enjoy Some of <br>
+               My Sports Photos
+            </h2>
+
+            <div class="sports__container container grid">
+               <article class="sports__card">
+                  <div class="sports__image">
+                     <img src="images/high_ropes.jpg" alt="A girl with a helmet balancing herself on a rope." class="sports__img">
+                     <div class="sports__shadow"></div>
+                  </div>
+
+                  <h2 class="sports__title">
+                     High Ropes Course
+                  </h2>
+
+                  <div class="sports__location">
+                     <i class="ri-map-pin-line"></i>
+                     <span>Adventure Education Center</span>
+                  </div>
+               </article>
+
+               <article class="sports__card">
+                  <div class="sports__image">
+                     <img src="images/volleyball.jpg" alt="A boy jumping high to hit a volleyball." class="sports__img">
+                     <div class="sports__shadow"></div>
+                  </div>
+
+                  <h2 class="sports__title">
+                     Volleyball
+                  </h2>
+
+                  <div class="sports__location">
+                     <i class="ri-map-pin-line"></i>
+                     <span>Intramural Sports Building</span>
+                  </div>
+               </article>
+
+               <article class="sports__card">
+                  <div class="sports__image">
+                     <img src="images/basketball.jpg" alt="A boy jumping high to catch a basketball." class="sports__img">
+                     <div class="sports__shadow"></div>
+                  </div>
+
+                  <h2 class="sports__title">
+                     Basketball
+                  </h2>
+
+                  <div class="sports__location">
+                     <i class="ri-map-pin-line"></i>
+                     <span>Intramural Sports Building</span>
+                  </div>
+               </article>
+
+               <article class="sports__card">
+                  <div class="sports__image">
+                     <img src="images/throwing_flags.jpg" alt="Football referees throwing their flags." class="sports__img">
+                     <div class="sports__shadow"></div>
+                  </div>
+
+                  <h2 class="sports__title">
+                     Flag Football
+                  </h2>
+
+                  <div class="sports__location">
+                     <i class="ri-map-pin-line"></i>
+                     <span>The Big House</span>
+                  </div>
+               </article>
+
+               <article class="sports__card">
+                  <div class="sports__image">
+                     <img src="images/football_referees.jpg" alt="Football referees gathered in a huddle." class="sports__img">
+                     <div class="sports__shadow"></div>
+                  </div>
+
+                  <h2 class="sports__title">
+                     Flag Football
+                  </h2>
+
+                  <div class="sports__location">
+                     <i class="ri-map-pin-line"></i>
+                     <span>The Big House</span>
+                  </div>
+               </article>
+
+               <article class="sports__card">
+                  <div class="sports__image">
+                     <img src="images/football.jpg" alt="Football players running across a field." class="sports__img">
+                     <div class="sports__shadow"></div>
+                  </div>
+
+                  <h2 class="sports__title">
+                     Flag Football
+                  </h2>
+
+                  <div class="sports__location">
+                     <i class="ri-map-pin-line"></i> 
+                     <span>The Big House</span>
+                  </div>
+               </article>
+            </div>
+         </section>
+         
+         <!-- nature section -->
+         <section class="nature section" id="nature">
+            <div class="nature__container">
+               <div class="nature__image">
+                  <div class="carousel">
+                    <img id="img0" src="images/yellow_flowers.jpg" alt="Close up top view of yellow flowers." class="nature__img">
+                    <!-- <img id="img1" src="images/Rawal_Lake.jpg" alt="Chairs in a garden." class="nature__img _hidden"> -->
+                    <img id="img1" src="images/purple_flower.jpg" alt="Close up view of a purple flower." class="nature__img _hidden">
+                    <img id="img2" src="images/shells.jpg" alt="Close up of empty snail shells." class="nature__img _hidden">
+                    <img id="img3" src="images/orange_flowers.jpg" alt="A close up of orange flowers." class="nature__img _hidden">
+                  </div>
+                  <div class="nature__shadow"></div>
+                </div>
+                
+
+               <div class="nature__content container grid">
+                  <div class="nature__data">
+                     <h2 class="section__title">
+                        Explore The <br> 
+                        Beauty of Nature
+                     </h2>
+   
+                     <!-- <p class="nature__description">
+                        Explore the beautiful shots I captured in the city of Islamabad, Pakistan.
+                     </p> -->
+                  </div>
+               </div>
+            </div>
+         </section>
+         
+         <!-- contact section -->
+         <section class="join section">
+            <div class="join__container container grid">
+               <div class="join__data">
+                  <h2 class="section__title">
+                     Join Me in my Journey!
+                  </h2>
+
+                  <p class="join__description">
+                     Let's work together to create something beautiful. <br>
+                     Contact me at aleenaq@umich.edu.
+                  </p>
+
+                  <!-- <form action="" class="join__form">
+                     <input type="email" placeholder="Enter your email" class="join__input"> -->
+
+                     <!-- <button class="join__button button">
+                        Subscribe Our Newsletter <i class="ri-arrow-right-line"></i>
+                     </button> -->
+                  <!-- </form> -->
+               </div>
+
+               <div class="join__image">
+                  <img src="images/high_ropes.jpg" alt="A girl with a helmet balancing herself on a rope." class="join__img">
+                  <div class="join__shadow"></div>
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <!-- footer section -->
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <div class="footer__content grid">
+               <div>
+                  <a href="index.html" class="footer__logo">Aleena's Photography</a>
+
+                  <p class="footer__description">
+                     Just a solo photographer exploring different things.
+                  </p>
+               </div>
+            </div>
+         </div>
+
+            <div class="footer__group">
+               <div class="footer__social">
+                  <a href="https://www.linkedin.com/in/aleenaqaiser/" target="_blank" class="footer__social-link" aria-label="linkedin">
+                     <i class="ri-linkedin-line" title="LinkedIn Icon"></i>
+                  </a>
+
+                  <a href="https://www.instagram.com/acefaceshoots/" target="_blank" class="footer__social-link" aria-label="instagram">
+                     <i class="ri-instagram-line" title="Instagram Icon"></i>
+                  </a>
+                
+               </div>
+
+               <span class="footer__copy">
+                  &#169; Designed by Aleena Qaiser | 2024
+               </span>
+            </div>
+         </div>
+          <!-- scroll up button -->
+      <a href="#" class="scrollup" id="scroll-up" aria-label="up-arrow">
+         <i class="ri-arrow-up-line"></i>
+      </a>
+      </footer>
+
+
+      <script src="js/scrollreveal.min.js"></script>
+      
+      <script src="js/automatic_carousel.js"></script>
+
+      <script src="js/manual_carousel.js"></script>
+
+      <script src="js/main.js"></script>
+   </body>
+</html>

@@ -1,0 +1,1057 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+/* :root { */
+  /* --header-height: 3.5rem; */
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /* --title-color: hsl(0, 0%, 95%); */
+  /* --text-color: hsl(0, 0%, 70%); */
+  /* --text-color-light: hsl(0, 0%, 60%); */
+  /* --body-color: hsl(0, 0%, 0%); */
+  /* --container-color: hsl(0, 0%, 8%); */
+  /* --shadow-gradient: linear-gradient(180deg, 
+                    hsla(0, 0%, 0%, 0) 50%, 
+                    hsl(0, 0%, 0%) 125%); */
+
+
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  /* --body-font: "Poppins", sans-serif; */
+  /* --second-font: "Montserrat", sans-serif; */
+  /* --biggest-font-size: 2.75rem; */
+  /* --h1-font-size: 1.5rem; */
+  /* --h2-font-size: 1.25rem; */
+  /* --h3-font-size: 1rem; */
+  /* --normal-font-size: .938rem; */
+  /* --small-font-size: .813rem; */
+  /* --smaller-font-size: .75rem; */
+
+  /*========== Font weight ==========*/
+  /* --font-regular: 400; */
+  /* --font-medium: 500; */
+  /* --font-semi-bold: 600; */
+
+  /*========== z index ==========*/
+  /* --z-tooltip: 10; */
+  /* --z-fixed: 100; */
+/* } */
+
+/*========== Responsive typography ==========*/
+/* @media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 5.5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+} */
+
+/*=============== BASE ===============*/
+/* * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+} */
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+body,
+button,
+input {
+  font-family: "Poppins", sans-serif;
+  font-size: .938rem;
+  color: hsl(0, 0%, 70%);
+}
+
+body {
+  background-color: hsl(0, 0%, 0%);
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  color: hsl(0, 0%, 95%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* animation scroll reveal */
+.main {
+  overflow: hidden;
+}
+
+/* nav */
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav {
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: hsl(0, 0%, 95%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.nav__toggle, 
+.nav__close {
+  display: flex;
+  font-size: 1.25rem;
+  color: hsl(0, 0%, 95%);
+  cursor: pointer;
+}
+
+/* Nav bar for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, .3);
+    width: 100%;
+    padding-block: 4rem;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    transition: top .4s;
+  }
+}
+
+.nav__list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.nav__link {
+  position: relative;
+  color: hsl(0, 0%, 95%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.nav__link::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: hsl(0, 0%, 95%);
+  position: absolute;
+  left: 0;
+  bottom: -.5rem;
+  transition: width .3s;
+}
+
+.nav__link:hover::after {
+  width: 70%;
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+
+/* Add blur to header */
+.blur-header::after {
+  content: "";
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, .3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Active link */
+.active-link::after {
+  width: 70%;
+}
+
+/* home */
+.home {
+  position: relative;
+}
+
+.home__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 750px;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(0.3);
+  filter: brightness(50%);
+}
+
+.home__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  background: linear-gradient(180deg,
+            hsla(0, 0%, 0%, 0) 58%,
+            hsl(0, 0%, 0%) 78%);
+}
+
+.home__container {
+  position: relative;
+  padding-top: 3rem;
+  row-gap: 3rem;
+}
+
+.home__data {
+  text-align: center;
+}
+
+.home__subtitle {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.home__title {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+.home__description {
+  margin-bottom: 2rem;
+  color: hsl(0, 0%, 95%);
+}
+
+.home__cards {
+  grid-template-columns: 240px;
+  justify-content: center;
+}
+
+.home__card {
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.home__card-img {
+  transition: transform .4s;
+  /* height: 170px;
+  width: 20rem; */
+  filter: grayscale(0.5);
+}
+
+.home__card-shadow{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, 
+  hsla(0, 0%, 0%, 0) 50%, 
+  hsl(0, 0%, 0%) 125%);
+}
+.home__card-title {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.home__card:hover .home__card-img {
+  transform: scale(1.05);
+  /* height: 170px; */
+  filter: unset;
+}
+
+
+/* buttons */
+.button {
+  background-color: hsla(0, 0%, 100%, .2);
+  padding: 1.25rem 1.5rem;
+  color: hsl(0, 0%, 95%);
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.button i {
+  font-size: 1.25rem;
+  transition: transform .4s;
+  font-weight: initial;
+}
+
+.button:hover i {
+  transform: translateX(.25rem);
+}
+
+/* food section */
+.food__carousel {
+  position: relative;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.food__carousel .food__container {
+  flex: 100%;
+}
+
+.food__nav__btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next{
+  cursor: pointer;
+  margin-left: 1rem;
+
+  &:hover{
+    color: white;
+    transition: 0.5s;
+  }
+}
+
+.prev{
+  cursor: pointer;
+
+  &:hover{
+    color: white;
+    transition: 0.5s;
+  }
+}
+
+.carousel-nav {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.carousel-nav button {
+  background-color: yellow;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+
+.dots {
+  display: inline-block;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.dot.active {
+  background-color: #bbb;
+}
+
+.food__container {
+  opacity: 1 !important;
+  row-gap: 3rem;
+}
+
+.food__data {
+  opacity: 1 !important;
+  text-align: center;
+}
+
+.food__description {
+  opacity: 1 !important;
+  margin-bottom: 2rem;
+}
+
+.food__image {
+  opacity: 1 !important;
+  position: relative;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.food__img {
+  filter: grayscale(0.5);
+  opacity: 1 !important;
+  height: 30rem;
+  /* width: 300px;
+  height: 600px; */
+  transition: transform .4s;
+}
+
+.food__image:hover .food__img {
+  transform: scale(1.05);
+  filter: unset;
+}
+
+/* sports section */
+.sports__container {
+  padding-top: 1.5rem;
+  grid-template-columns: 240px;
+  justify-content: center;
+  row-gap: 2.5rem;
+}
+
+.sports__image {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.sports__img {
+  filter: grayscale(0.5);
+  transition: transform .4s;
+}
+
+.sports__image:hover .sports__img {
+  filter: unset;
+  transform: scale(1.05);
+}
+
+.sports__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+  hsla(0, 0%, 0%, 0) 50%, 
+  hsl(0, 0%, 0%) 125%);
+}
+
+.sports__title {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.sports__location {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-size: .813rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.sports__location i {
+  font-size: 1rem;
+}
+
+/* nature section */
+.nature {
+  position: relative;
+}
+
+.nature__image {
+  position: absolute;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* .nature__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+} */
+
+._hidden{
+  display: none;
+}
+
+.opacityFull * {
+  opacity: 1 !important;
+}
+
+.nature__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nature__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+            hsl(0, 0%, 0%) 5%, 
+            hsla(0, 0%, 0%, 0) 40%, 
+            hsla(0, 0%, 0%, 0) 60%, 
+            hsl(0, 0%, 0%) 92%);
+}
+
+.nature__content {
+  position: relative;
+  padding-top: 16rem;
+  text-align: center;
+  row-gap: 2.5rem;
+}
+
+.nature__user {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.nature__perfil {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.nature__name {
+  font-size: .813rem;
+  color: hsl(0, 0%, 95%);
+}
+
+/* join section */
+.join{
+  margin-top: 5rem;
+}
+
+.join__container {
+  row-gap: 3rem;
+  padding-bottom: 2.5rem;
+}
+
+.join__data {
+  text-align: center;
+}
+
+.join__description {
+  margin-bottom: 2rem;
+}
+
+.join__form {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.join__input {
+  padding: 1.25rem 1rem;
+  background-color: hsl(0, 0%, 8%);
+}
+
+.join__button {
+  cursor: pointer;
+}
+
+.join__image {
+  position: relative;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.join__img {
+  width: 300px;
+  transition: transform .4s;
+}
+
+.join__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+  hsla(0, 0%, 0%, 0) 50%, 
+  hsl(0, 0%, 0%) 125%);
+}
+.join__image:hover .join__img {
+  transform: scale(1.05);
+}
+
+/* footer */
+.footer {
+  padding-block: 2.5rem;
+  background-color: hsl(0, 0%, 8%);
+}
+
+.footer__content {
+  row-gap: 3.5rem;
+}
+
+.footer__logo {
+  display: inline-block;
+  color: hsl(0, 0%, 95%);
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer__data {
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 3.5rem;
+}
+
+.footer__title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer__links {
+  display: grid;
+  row-gap: .75rem;
+}
+
+.footer__link {
+  color: hsl(0, 0%, 70%);
+  transition: color .4s;
+}
+
+.footer__link:hover {
+  color: hsl(0, 0%, 95%);
+}
+
+.footer__group, 
+.footer__social {
+  display: flex;
+}
+
+.footer__group {
+  margin-top: 5rem;
+  flex-direction: column;
+  padding: 40px;
+  align-items: center;
+  row-gap: 2rem;
+}
+
+.footer__social {
+  column-gap: 1.5rem;
+}
+
+.footer__social-link {
+  color: hsl(0, 0%, 70%);
+  font-size: 1.25rem;
+  transition: color .4s, transform .4s;
+}
+
+.footer__social-link:hover {
+  color: hsl(0, 0%, 95%);
+  transform: translateY(-.25rem);
+}
+
+.footer__copy {
+  font-size: .75rem;
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(0, 0%, 10%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 20%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(0, 0%, 30%);
+}
+
+/* scroll up button */
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: hsla(0, 0%, 100%, .1);
+  padding: 6px;
+  display: inline-flex;
+  color: hsl(0, 0%, 95%);
+  font-size: 1.25rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For safari */
+  z-index: 10;
+  transition: bottom .4s, transform .4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-.25rem);
+}
+
+/* shoing the scroll up */
+.show-scroll {
+  bottom: 3rem;
+}
+
+.container {
+  margin-inline: 1rem;
+}
+
+.footer__data {
+  grid-template-columns: max-content;
+}
+
+/* BREAKPOINTS */
+
+/* tablet */
+@media screen and (min-width: 576px) {
+  .home__container,
+  .food__container,
+  .nature__content,
+  .join__container {
+    grid-template-columns: 380px;
+    justify-content: center;
+  }
+
+  .footer__data {
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home__cards {
+    grid-template-columns: repeat(2, 240px);
+  }
+
+  .food__container,
+  .join__container {
+    grid-template-columns: repeat(2, 350px);
+    align-items: center;
+  }
+
+  .food__data,
+  .food__data .section__title,
+  .join__data,
+  .join__data .section__title {
+    text-align: center;
+  }
+
+  .sports__container {
+    grid-template-columns: repeat(2, 240px);
+  }
+
+  .nature__img {
+    width: 100vw;
+  }
+  .join__image {
+    order: -1;
+  }
+
+  .footer__content {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+  .footer__group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer__copy {
+    order: -1;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1023px) {
+  .nav__close, 
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+
+  .sports__container {
+    grid-template-columns: repeat(3, 240px);
+  }
+
+  .footer__data {
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 4.5rem;
+  }
+  
+}
+
+@media screen and (min-width: 1152px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .nav {
+    height: calc(3.5rem + 1.5rem);
+  }
+  .blur-header::after {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px); /* For safari */
+  }
+
+  .home__container {
+    grid-template-columns: initial;
+    justify-content: initial;
+    row-gap: 4rem;
+    padding-top: 6.5rem;
+  }
+  .home__shadow {
+    height: 980px;
+  }
+  .home__data {
+    text-align: initial;
+    width: 480px;
+  }
+  .home__subtitle {
+    font-size: 1.25rem;
+  }
+  .home__description {
+    margin-bottom: 2.5rem;
+  }
+  .home__cards {
+    grid-template-columns: repeat(4, 260px);
+  }
+  .home__card-title {
+    left: 1.5rem;
+    bottom: 1.5rem;
+  }
+
+  .button {
+    column-gap: 1.5rem;
+  }
+
+  .food__container {
+    grid-template-columns: 400px 460px;
+    column-gap: 8.5rem;
+    padding-block: 1rem;
+  }
+  .food__description {
+    margin-bottom: 3rem;
+  }
+
+  .sports__container {
+    grid-template-columns: repeat(3, 300px);
+    column-gap: 3rem;
+    padding-top: 4rem;
+  }
+  .sports__title {
+    font-size: 1.25rem;
+  }
+  .sports__location {
+    font-size: .938rem;
+  }
+
+  .nature__img {
+    height: 600px;
+  }
+  .nature__content {
+    padding-top: 28rem;
+    grid-template-columns: 670px 1fr;
+  }
+  .nature__data, 
+  .nature__data .section__title {
+    text-align: initial;
+  }
+
+  .nature__user {
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-bottom: 1.25rem;
+  }
+
+  .join__container {
+    grid-template-columns: 460px 340px;
+    column-gap: 8.5rem;
+    padding-block: 1rem 5rem;
+  }
+  .join__img {
+    width: 460px;
+  }
+  .join__description {
+    margin-bottom: 3rem;
+  }
+
+  .footer {
+    padding-block: 5rem 3rem;
+  }
+  .footer__title {
+    margin-bottom: 1.5rem;
+  }
+  .footer__group {
+    margin-top: 7rem;
+  }
+  .footer__social {
+    column-gap: 2rem;
+  }
+  .footer__social-link {
+    font-size: 1.5rem;
+  }
+
+  .scrollup {
+    right: 3rem;
+  }
+}
+
+
+
+
+
+/* skip content */
+.skip {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.skip:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
+
+/* reduce animation */
+/* @media (prefers-reduced-motion: reduce) {
+  .home__subtitle, .home__container, .home__cards {
+      display:none;
+  }
+} */
+
+
+/* custom cursor */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="white" stroke="black" stroke-width="1"/></svg>'), auto;
+}
+
+
+/* 
+testing grid */
+.grid-container {
+  columns: 1; 
+  column-gap: 7px; 
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.grid-item {
+  display: inline-block;
+  width: 100%; 
+  break-inside: avoid-column; 
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    columns: 2; 
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-container {
+    columns: 3;
+  }
+}
+
